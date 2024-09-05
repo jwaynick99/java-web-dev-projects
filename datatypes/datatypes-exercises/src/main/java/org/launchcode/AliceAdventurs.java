@@ -16,10 +16,10 @@ public class AliceAdventurs {
         System.out.println(strContains);
 
         if (strContains){
-            System.out.println("Index of word in string: " + aliceString.toLowerCase().indexOf(word.toLowerCase()));
+            System.out.println("Index of word in string: " + aliceString.indexOf(word));
             System.out.println("Word length: " + word.length());
 
-            String replacedStr = aliceString.toLowerCase().replace(word.toLowerCase(), "");
+            String replacedStr = aliceString.replace(word, "");
             System.out.println(replacedStr);
         }
     }
