@@ -5,10 +5,12 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class HashMapGradebook {
+
     public static void main(String[] args) {
-        HashMap<String, Double> students = new HashMap<>();
+
+        HashMap<String, Double> students = new HashMap<>(); //declare new hashmap with String key and Double value.
         Scanner input = new Scanner(System.in);
-        String newStudent;
+        String newStudent; //used in our do while
 
         System.out.println("Enter your students (or ENTER to finish):");
 
@@ -21,7 +23,7 @@ public class HashMapGradebook {
             if (!newStudent.equals("")) {
                 System.out.print("Grade: ");
                 Double newGrade = input.nextDouble();
-                students.put(newStudent, newGrade);
+                students.put(newStudent, newGrade); //assigns new key/value pair in students HashMap
 
                 // Read in the newline before looping back
                 input.nextLine();
@@ -33,7 +35,7 @@ public class HashMapGradebook {
         System.out.println("\nClass roster:");
         double sum = 0.0;
 
-        for (Map.Entry<String, Double> student : students.entrySet()) {
+        for (Map.Entry<String, Double> student : students.entrySet()) { //map.Entry used specifically to use in a for each, allows iteration over key/value pairs in Hash.
             System.out.println(student.getKey() + " (" + student.getValue() + ")");
             sum += student.getValue();
         }
