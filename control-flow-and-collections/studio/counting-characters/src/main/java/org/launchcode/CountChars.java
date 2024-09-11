@@ -1,5 +1,6 @@
 package org.launchcode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,12 +11,12 @@ public class CountChars {
                 " the equation to equal zero. Once you’ve done that, it’s pretty straightforward from there.";
 
         char[] charInString = loopString.toLowerCase().toCharArray();
+
         HashMap<Character, Integer> charCount = new HashMap<>();
 
-        char alphabetArr[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        char[] alphabetArr = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         for (char character : charInString) {
             int count = 0;
-
             for (char singleChar : charInString){
                 if (singleChar == character){
                     count++;
