@@ -58,7 +58,8 @@ public class Student {
     //  than just the class fields.
     @Override
     public String toString(){
-        return this.name + "(Credits: " + this.numberOfCredits + ", GPA: " + this.gpa + ")";
+        String report = String.format("%s (Grade: %s, Credits: %d GPA: %.2f)", this.name, this.getGradeLevel(), this.numberOfCredits, this.gpa);
+        return report;
     }
 
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
