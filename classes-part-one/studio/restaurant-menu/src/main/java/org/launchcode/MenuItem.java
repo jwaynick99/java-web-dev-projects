@@ -9,27 +9,17 @@ public class MenuItem {
     private  String description;
     private String category;
     private final LocalDate dateAdded;
-    private boolean isNew;
 
-    public MenuItem(String itemName, double price, String description, String category, LocalDate dateAdded){
+    public MenuItem(String itemName, double price, String description, String category, String dateAdded){
         this.itemName = itemName;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.dateAdded = dateAdded;
-        this.isNew = isNewItem();
+        this.dateAdded = LocalDate.parse(dateAdded);
     }
 
     public void setItemName(String itemName) {
         this.itemName = itemName;
-    }
-
-    public boolean getIsNew() {
-        return isNew;
-    }
-
-    public void setIsNew(boolean aNew) {
-        isNew = aNew;
     }
 
     public double getPrice() {
@@ -59,12 +49,15 @@ public class MenuItem {
     public LocalDate getDateAdded() {
         return dateAdded;
     }
-    public boolean isNewItem() {
-        long daysSinceAdded = ChronoUnit.DAYS.between(dateAdded, LocalDate.now());
-        if (daysSinceAdded <= 14) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean isNew() {
+        LocalDate today = LocalDate.now();
+        double daysOnMenu = getDateAdded().until(today, ChronoUnit.DAYS);
+        return daysOnMenu < 30;
+    }
+
+    @Override
+    public String toString(){
+        String checkNew = isNew() ? " *** NEW ITEM ***": "";
+        return itemName + checkNew + "\n" + description + " | $" + price;
     }
 }
