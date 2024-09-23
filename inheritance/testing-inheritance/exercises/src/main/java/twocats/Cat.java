@@ -1,3 +1,5 @@
+package twocats;
+
 public class Cat {
 
     private boolean tired = false;
@@ -7,8 +9,8 @@ public class Cat {
     // The biological family for all cat species
     private String family = "Felidae";
 
-    public Cat (double aWeight) {
-        weight = aWeight;
+    public Cat () {
+        weight = 12;
     }
 
     /**** Getters and Setters ****/
