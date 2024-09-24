@@ -3,7 +3,6 @@ package org.launchcode;
 import java.util.Scanner;
 
 public class MultipleChoice extends Question{
-    private String question;
     private String answer1;
     private String answer2;
     private String answer3;
@@ -13,8 +12,7 @@ public class MultipleChoice extends Question{
     Scanner input = new Scanner(System.in);
 
     public MultipleChoice(String question, String answer1, String answer2, String answer3, String answer4, String correctAnswer){
-        super(correctAnswer);
-        this.question = question;
+        super(correctAnswer, question);
         this.answer1 = answer1;
         this.answer2 = answer2;
         this.answer3 = answer3;
@@ -23,12 +21,12 @@ public class MultipleChoice extends Question{
 
     @Override
     public String toString(){
-        return getQuestionNum() + ") " + question + "\nType the CORRECT answer:\n" + answer1 + "\n" + answer2  + "\n" + answer3  + "\n" + answer4 + "\n";
+        return getQuestionNum() + ") " + getQuestion() + "\nType the CORRECT answer:\n" + answer1 + "\n" + answer2  + "\n" + answer3  + "\n" + answer4 + "\n";
     }
 
     public boolean checkCorrect(){
         System.out.println(this.toString());
-        String userInput = input.next();
+        String userInput = input.nextLine();
         if (userInput.equals(getCorrectAnswer())){
             isCorrect = true;
         }

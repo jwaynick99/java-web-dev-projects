@@ -19,23 +19,6 @@ public class Quiz {
             if (question.checkCorrect()){
                 correct++;
             }
-            /*String answer;
-            String answer2;
-            if (question.getClass() == CheckBox.class){
-                System.out.println(question.toString());
-                answer = input.next();
-                answer2 = input.next();
-                if (question.getCorrectAnswer().equals(answer) && question.getCorrectAnswer2().equals(answer2) || question.getCorrectAnswer().equals(answer2) && question.getCorrectAnswer2().equals(answer)){
-                    correct++;
-                }
-            } else {
-                System.out.println(question.toString());
-                System.out.println(question.getCorrectAnswer());
-                answer = input.next();
-                if (question.getCorrectAnswer().equals(answer)) {
-                    correct++;
-                }
-            }*/
         }
     }
 

@@ -3,20 +3,23 @@ package org.launchcode;
 public class Question {
     private final int questionNum;
     private static int nextQuestionNum = 1;
+    private final String question;
     private final String correctAnswer;
     private String correctAnswer2;
 
-    public Question(String correctAnswer){
-        this.questionNum = nextQuestionNum;
+    public Question(String correctAnswer, String question){
+        questionNum = nextQuestionNum;
         nextQuestionNum ++;
         this.correctAnswer = correctAnswer;
+        this.question = question;
     }
 
-    public Question(String correctAnswer, String correctAnswer2){
+    public Question(String correctAnswer, String correctAnswer2, String question){
         questionNum = nextQuestionNum;
         nextQuestionNum ++;
         this.correctAnswer = correctAnswer;
         this.correctAnswer2 = correctAnswer2;
+        this.question = question;
     }
 
     public int getQuestionNum() {
@@ -33,5 +36,9 @@ public class Question {
 
     public boolean checkCorrect(){
         return false;
+    }
+
+    public String getQuestion() {
+        return question;
     }
 }
